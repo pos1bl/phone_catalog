@@ -1,0 +1,17 @@
+@mixin link {
+  position: relative;
+
+  text-transform: uppercase;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 11px;
+  letter-spacing: 0.04em;
+
+  transition: color $transition-time;
+
+  &:hover {
+    color: $color-primary;
+  }
+}

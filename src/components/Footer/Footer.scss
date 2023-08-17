@@ -1,0 +1,52 @@
+@import "../../style/vars";
+@import "../../style/mixins";
+
+.footer {
+  padding: 0 152px;
+  box-shadow: 0 -1px $color-elements;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 96px;
+
+    font-family: $font-bold;
+    color: $color-secondary;
+  }
+  
+  &__list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 64px;
+    }
+  }
+
+  &__link {
+    @include link;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    height: 32px;
+
+    font-family: $font-semibold;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: inherit;
+    background-color: inherit;
+    cursor: pointer;
+  }
+}
+
+.button {
+  &__text {
+    margin-right: 16px;
+  }
+}
