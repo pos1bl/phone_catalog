@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 import './Footer.scss';
 import logo from '../../images/logo.svg';
-import arrowUp from '../../images/arrow-top.svg';
+import arrowUp from '../../images/arrows/arrow-top.svg';
 
 const handleClick = () => document.body.scrollIntoView({
   behavior: 'smooth',

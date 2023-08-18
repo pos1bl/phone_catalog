@@ -23,6 +23,10 @@ $height: 64px;
     height: 100%;
   }
 
+  &__logo {
+    margin-right: 64px;
+  }
+
   &__list {
     display: flex;
     list-style: none;

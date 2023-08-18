@@ -1,0 +1,81 @@
+@import "../../style/vars";
+
+.Carousel {
+  max-width: $carousel-width;
+  display: flex;
+  transition-duration: 1s;
+
+  &__wrapper {
+    width: $carousel-width;
+    overflow: hidden;
+    transition-property: width;
+    transition-duration: inherit;
+    margin-right: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__list {
+    list-style: none;
+    max-width: inherit;
+    display: flex;
+    height: 400px;
+    transform: translateX(0);
+    transition-property: transform;
+    transition-duration: inherit;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: $carousel-width;
+    height: 400px;
+    transition-property: width;
+    transition-duration: inherit;
+  }
+
+  &__image {
+    width: inherit;
+    height: 400px;
+    object-fit: cover;
+  }
+
+  &__button {
+    border: solid 1px $color-icons;
+    width: 32px;
+    height: 400px;
+    background-color: inherit;
+
+    cursor: pointer;
+
+    &--prev {
+      margin-right: 16px;
+    }
+  }
+
+  &__dots {
+    padding: 10px 5px;
+    list-style: none;
+    display: inline-flex;
+    align-self: center;
+  }
+
+  &__dot {
+    width: 14px;
+    height: 4px;
+    background-image: url("../../images/dots/dot.svg");
+
+    &:not(:last-child) {
+      margin-right: 14px;
+    }
+
+    &--active {
+      background-image: url("../../images/dots/active-dot.svg");
+    }
+  }
+}
+
+.list {
+  margin-bottom: 8px;
+}
