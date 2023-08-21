@@ -29,33 +29,36 @@ const Carousel = () => {
       .getPropertyValue('transform')
       .split(', ')[4];
 
-    prevButton.onclick = () => {
-      const prevSlide = translateValue + itemWidth;
-
-      if (prevSlide > firstSlide) {
+    const prevSlide = () => {
+      if (translateValue + itemWidth > firstSlide) {
         translateValue = lastSlide;
         setSteps(images.length - 1);
       } else {
-        translateValue = prevSlide;
+        translateValue += itemWidth;
         setSteps((prevStep) => prevStep - 1);
       }
 
       carouselList.style.transform = `translateX(${translateValue}px)`;
     };
 
-    nextButton.onclick = () => {
-      const nextSlide = translateValue - itemWidth;
-
-      if (nextSlide < lastSlide) {
+    const nextSlide = () => {
+      if (translateValue - itemWidth < lastSlide) {
         translateValue = firstSlide;
         setSteps(0);
       } else {
-        translateValue = nextSlide;
+        translateValue -= itemWidth;
         setSteps((prevStep) => prevStep + 1);
       }
 
       carouselList.style.transform = `translateX(${translateValue}px)`;
     };
+
+    const autoSwipeInterval = setInterval(nextSlide, 5000);
+
+    prevButton.onclick = prevSlide;
+    nextButton.onclick = nextSlide;
+
+    return () => clearInterval(autoSwipeInterval);
   }, []);
 
   return (
@@ -65,7 +68,7 @@ const Carousel = () => {
         type="button"
         ref={prevButtonRef}
       >
-        <img src={arrowLeft} alt="arrow left" />
+        <img src={arrowLeft} alt="prev" />
       </button>
 
       <div className="Carousel__wrapper">
@@ -101,7 +104,7 @@ const Carousel = () => {
         type="button"
         ref={nextButtonRef}
       >
-        <img src={arrowRight} alt="arrow left" />
+        <img src={arrowRight} alt="next" />
       </button>
     </div>
   );

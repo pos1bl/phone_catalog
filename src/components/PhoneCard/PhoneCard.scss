@@ -1,0 +1,118 @@
+@import "../../style/vars";
+@import "../../style/mixins";
+
+.phone-card {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 24px;
+  border: solid 1px $color-elements;
+  max-width: 272px;
+  transition: box-shadow $transition-time;
+
+  &__image {
+    margin: 0 8px 24px;
+
+    width: 208px;
+    height: 208px;
+    object-fit: contain;
+  }
+
+  &:hover {
+    box-shadow: 0 0 11px $color-secondary;
+
+    .phone-card__image {
+      transition: transform $transition-time;
+      transform: scale(1.1);
+    }
+  }
+
+  &__title {
+    margin-bottom: 6px;
+
+    max-width: 224px;
+    height: 42px;
+
+    color: $color-primary;
+    @include body-text;
+  }
+
+  &__price-container {
+    display: flex;
+  }
+
+  &__line {
+    margin-bottom: 16px;
+    border-color: $color-elements;
+  }
+
+  &__propeties {
+    margin-bottom: 16px;
+  }
+
+  &__property-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__buttons {
+    display: flex;
+  }
+
+  &__cart-button {
+    margin-right: 8px;
+
+    width: 176px;
+    height: 40px;
+
+    background-color: $color-primary;
+    color: $color-white;
+    @include buttons;
+    cursor: pointer;
+  }
+
+  &__favourite-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    width: 40px;
+    height: 40px;
+
+    background-color: $color-white;
+    border: solid 1px $color-icons;
+  }
+}
+
+.price-container {
+  margin-bottom: 6px;
+
+  &__current-price {
+    margin-right: 8px;
+
+    color: $color-primary;
+    @include h2;
+    font-weight: 700;
+  }
+
+  &__full-price {
+    text-decoration: line-through;
+    color: $color-secondary;
+    font-family: $font-regular;
+    font-size: 22px;
+    line-height: 31px;
+  }
+}
+
+.property-container {
+  &__property {
+    text-transform: capitalize;
+    color: $color-secondary;
+    @include small-text;
+  }
+
+  &__value {
+    color: $color-primary;
+    @include small-text;
+  }
+}

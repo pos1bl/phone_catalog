@@ -1,0 +1,62 @@
+@import "../../style/vars";
+@import "../../style/mixins";
+
+.phone-carousel {
+  max-width: $home-page-width;
+
+  &__top {
+    margin-bottom: 24px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    @include title;
+  }
+
+  &__wrapper {
+    width: $home-page-width;
+    overflow: hidden;
+  }
+
+  &__list {
+    display: flex;
+    transform: translateX(0);
+    transition-property: transform;
+    transition-duration: $transition-time;
+  }
+
+  &__item {
+    &:not(:nth-child(4n)) {
+      margin-right: 16px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    height: 32px;
+    width: 32px;
+
+    background-color: $color-white;
+    border: solid 1px $color-icons;
+
+    &--prev {
+      margin-right: 16px;
+    }
+
+    &--disabled {
+      border-color: $color-elements;
+      cursor: default;
+    }
+  }
+}

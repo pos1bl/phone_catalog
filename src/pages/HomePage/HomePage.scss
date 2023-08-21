@@ -1,8 +1,25 @@
+@import "../../style/vars";
+
 .home-page {
-  padding-top: 40px;
+  padding: 40px 152px 80px;
 
   &__carousel {
-    max-width: 1136px;
+    max-width: $home-page-width;
+    margin: 0 auto 72px;
+  }
+
+  &__hot-prices {
+    max-width: $home-page-width;
+    margin: 0 auto 80px;
+  }
+
+  &__categories {
+    max-width: $home-page-width;
+    margin: 0 auto 80px;
+  }
+
+  &__new-models {
+    max-width: $home-page-width;
     margin: 0 auto;
   }
 }

@@ -3,26 +3,22 @@
 .Carousel {
   max-width: $carousel-width;
   display: flex;
-  transition-duration: 1s;
 
   &__wrapper {
     width: $carousel-width;
     overflow: hidden;
-    transition-property: width;
-    transition-duration: inherit;
     margin-right: 16px;
     display: flex;
     flex-direction: column;
   }
 
   &__list {
-    list-style: none;
     max-width: inherit;
     display: flex;
     height: 400px;
     transform: translateX(0);
     transition-property: transform;
-    transition-duration: inherit;
+    transition-duration: $transition-time;
   }
 
   &__item {
@@ -31,8 +27,7 @@
     align-items: center;
     width: $carousel-width;
     height: 400px;
-    transition-property: width;
-    transition-duration: inherit;
+
   }
 
   &__image {
