@@ -13,20 +13,23 @@ import { AccessoriesPage } from './pages/AccessoriesPage/AccessoriesPage';
 import { InvalidPage } from './pages/InvalidPage/InvalidPage';
 import { FavouritesPage } from './pages/FavouritesPage/FavouritesPage';
 import { CartPage } from './pages/CartPage/CartPage';
+import { ProductsProvider } from './helpers/ProductsContext';
 
 export const Root = () => (
   <Router>
-    <Routes>
-      <Route path="/" element={<App />}>
-        <Route index element={<HomePage />} />
-        <Route path="home" element={<Navigate to="/" />} />
-        <Route path="phones" element={<PhonesPage />} />
-        <Route path="tablets" element={<TabletsPage />} />
-        <Route path="accessories" element={<AccessoriesPage />} />
-        <Route path="favourites" element={<FavouritesPage />} />
-        <Route path="cart" element={<CartPage />} />
-        <Route path="*" element={<InvalidPage />} />
-      </Route>
-    </Routes>
+    <ProductsProvider>
+      <Routes>
+        <Route path="/" element={<App />}>
+          <Route index element={<HomePage />} />
+          <Route path="home" element={<Navigate to="/" />} />
+          <Route path="phones" element={<PhonesPage />} />
+          <Route path="tablets" element={<TabletsPage />} />
+          <Route path="accessories" element={<AccessoriesPage />} />
+          <Route path="favourites" element={<FavouritesPage />} />
+          <Route path="cart" element={<CartPage />} />
+          <Route path="*" element={<InvalidPage />} />
+        </Route>
+      </Routes>
+    </ProductsProvider>
   </Router>
 );

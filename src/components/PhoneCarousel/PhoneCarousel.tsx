@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 
-import { PhoneCard as Phone } from '../../types/PhoneCard';
+import { ProductCard as Phone } from '../../types/ProductCard';
 import arrowRight from '../../images/arrows/arrow-right.svg';
 import arrowLeft from '../../images/arrows/arrow-left.svg';
 import arrowRightDisabled from '../../images/arrows/arrow-right--disabled.svg';

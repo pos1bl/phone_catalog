@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
 
-import { PhoneCard } from '../../types/PhoneCard';
-import { getHotPricePhones } from '../../helpers/api';
+import { ProductCard } from '../../types/ProductCard';
+import { getHotPriceProducts } from '../../helpers/api';
 import { PhoneCarousel } from '../PhoneCarousel/PhoneCarousel';
+import Products from '../../helpers/data/products';
 
 export const HotPrices = () => {
-  const [phones, setPhones] = useState<PhoneCard[]>([]);
+  const [phones, setPhones] = useState<ProductCard[]>([]);
 
   useEffect(() => {
-    getHotPricePhones(12)
+    getHotPriceProducts(Products.PHONES, 12)
       .then(setPhones);
   }, []);
 

@@ -1,5 +1,5 @@
 import { Properties } from '../../helpers/data/properties';
-import { PhoneCard as Phone } from '../../types/PhoneCard';
+import { ProductCard as Phone } from '../../types/ProductCard';
 import favouriteIcon from '../../images/favourites.svg';
 import './PhoneCard.scss';
 

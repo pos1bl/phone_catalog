@@ -1,9 +1,13 @@
 import { NavLink } from 'react-router-dom';
+import { useContext } from 'react';
+
 import categoryImages from '../../helpers/data/categories-images';
 import './Categories.scss';
+import { ProductsContext } from '../../helpers/ProductsContext';
 
 export const Categories = () => {
-  const { phones, tablets, accessories } = categoryImages;
+  const { phones, tablets, accessories } = useContext(ProductsContext);
+  const { phonesImage, tabletsImage, accessoriesImage } = categoryImages;
 
   return (
     <div className="categories">
@@ -21,8 +25,8 @@ export const Categories = () => {
             >
               <img
                 className="categories__image categories__image--phones"
-                src={phones}
-                alt={phones}
+                src={phonesImage}
+                alt={phonesImage}
               />
             </div>
 
@@ -31,7 +35,7 @@ export const Categories = () => {
             </h3>
 
             <p className="categories__amount">
-              73 models
+              {`${phones.length} models`}
             </p>
           </NavLink>
         </li>
@@ -45,8 +49,8 @@ export const Categories = () => {
             >
               <img
                 className="categories__image categories__image--tablets"
-                src={tablets}
-                alt={tablets}
+                src={tabletsImage}
+                alt={tabletsImage}
               />
             </div>
 
@@ -55,7 +59,7 @@ export const Categories = () => {
             </h3>
 
             <p className="categories__amount">
-              0 models
+              {`${tablets.length} models`}
             </p>
           </NavLink>
         </li>
@@ -69,8 +73,8 @@ export const Categories = () => {
             >
               <img
                 className="categories__image categories__image--accessories"
-                src={accessories}
-                alt={accessories}
+                src={accessoriesImage}
+                alt={accessoriesImage}
               />
             </div>
 
@@ -79,7 +83,7 @@ export const Categories = () => {
             </h3>
 
             <p className="categories__amount">
-              0 models
+              {`${accessories.length} models`}
             </p>
           </NavLink>
         </li>
