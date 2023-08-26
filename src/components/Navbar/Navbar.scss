@@ -1,0 +1,44 @@
+@import "../../style/vars";
+@import "../../style/mixins";
+
+.navbar {
+  display: flex;
+  align-items: center;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__home {
+    height: 16px;
+    margin-right: 8px;
+  }
+
+  &__arrow {
+    height: 16px;
+    width: 16px;
+    background-image: url("../../images/arrows/arrow-right--disabled.svg");
+    margin-right: 8px;
+  }
+
+  &__caption {
+    text-transform: capitalize;
+    color: $color-secondary;
+    font-family: $font-semibold;
+    font-size: 12px;
+    line-height: 12px;
+    padding-top: 1.5px;
+  }
+
+  &__link {
+    text-transform: capitalize;
+    color: $color-primary;
+    font-family: $font-semibold;
+    font-size: 12px;
+    line-height: 12px;
+    padding-top: 1.5px;
+
+    margin-right: 8px;
+  }
+}

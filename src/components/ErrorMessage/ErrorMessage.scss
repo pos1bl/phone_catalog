@@ -1,0 +1,7 @@
+@import "../../style/vars";
+@import "../../style/mixins";
+
+.error-message {
+  @include title;
+  color: $color-primary;
+}

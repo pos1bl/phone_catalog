@@ -1,26 +1,26 @@
 import { Properties } from '../../helpers/data/properties';
-import { ProductCard as Phone } from '../../types/ProductCard';
+import { Product } from '../../types/Product';
 import favouriteIcon from '../../images/favourites.svg';
-import './PhoneCard.scss';
+import './ProductCard.scss';
 
 type Props = {
-  phone: Phone;
+  product: Product;
 };
 
-export const PhoneCard: React.FC<Props> = ({ phone }) => {
+export const ProductCard: React.FC<Props> = ({ product }) => {
   const {
-    phoneId,
+    itemId,
     name,
     fullPrice,
     price,
     image,
-  } = phone;
+  } = product;
 
   return (
     <div className="phone-card" data-cy="cardsContainer">
       <img
         src={`_new/${image}`}
-        alt={phoneId}
+        alt={itemId}
         className="phone-card__image"
       />
 
@@ -54,7 +54,7 @@ export const PhoneCard: React.FC<Props> = ({ phone }) => {
             </span>
 
             <span className="property-container__value">
-              {phone[property]}
+              {product[property]}
             </span>
           </li>
         ))}

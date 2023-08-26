@@ -1,18 +1,23 @@
-import { ProductCard } from '../types/ProductCard';
+import { Product } from '../types/Product';
 import API_URL from './data/api-url';
 import Products from './data/products';
 
 type FetchProducts = (
   category: Products,
   amount?: number,
-) => Promise<ProductCard[]>;
+) => Promise<Product[]>;
 
-export const getProducts: FetchProducts = async (category) => {
-  const response = await fetch(API_URL);
+export const getProducts: FetchProducts = (category) => {
+  return fetch(API_URL)
+    .then(response => {
+      if (!response.ok) {
+        throw Error('Failed to fetch products');
+      }
 
-  return response.json()
-    .then((products : ProductCard[]) => products
-      .filter(product => product.category === category));
+      return response.json()
+        .then((products : Product[]) => products
+          .filter(product => product.category === category));
+    });
 };
 
 export const getHotPriceProducts: FetchProducts = async (

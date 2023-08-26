@@ -52,3 +52,9 @@
   font-size: 14px;
   line-height: 21px;
 }
+
+@mixin product-page {
+  max-width: $page-width;
+  margin: 0 auto;
+  padding: 24px 0 80px;
+}

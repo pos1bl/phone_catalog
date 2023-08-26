@@ -1,0 +1,18 @@
+@import "../../style/vars";
+@import "../../style/mixins";
+
+.products-container {
+  &__drop-downs {
+    display: flex;
+    margin-bottom: 24px;
+  }
+
+  &__products-list {
+    margin-bottom: 40px;
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,62 @@
+@import "../../style/vars";
+@import "../../style/mixins";
+
+.pagination {
+  display: flex;
+
+  &__inactive {
+    display: none;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    margin-right: 8px;
+    width: 32px;
+    height: 32px;
+
+    color: $color-primary;
+    @include body-text;
+    border: 1px solid $color-icons;
+    cursor: pointer;
+
+    &:not(&--active):not(&--break):hover {
+      background-color: $color-bgc-and-hbr;
+    }
+
+    &--last {
+      margin-right: 16px;
+    }
+
+    &--disabled {
+      cursor: default;
+    }
+
+    &--active {
+      cursor: default;
+      color: $color-white;
+      background-color: $color-primary;
+    }
+
+    &--break {
+      cursor: default;
+      border: none;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  &__link {
+    cursor: inherit;
+    color: inherit;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__image {
+    display: block;
+  }
+}

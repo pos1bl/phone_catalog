@@ -1,0 +1,6 @@
+@import "../../style/vars";
+@import "../../style/mixins";
+
+.tablets-page {
+  @include product-page;
+}

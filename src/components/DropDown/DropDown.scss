@@ -1,0 +1,86 @@
+@import "../../style/vars";
+@import "../../style/mixins";
+
+.drop-down {
+  position: relative;
+
+  &__button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 12px;
+    width: 128px;
+    height: 40px;
+
+    @include buttons;
+    color: $color-primary;
+    border: 1px solid $color-icons;
+    background-color: $color-white;
+    cursor: pointer;
+  }
+
+  &__menu {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: $color-white;
+    z-index: 1;
+
+    padding-top: 4px;
+    min-width: 128px;
+  }
+
+  &--sort {
+    margin-right: 16px;
+
+    .drop-down__menu {
+      min-width: 176px;
+    }
+
+    .drop-down__button {
+      width: 176px;
+    }
+  }
+
+  &__trigger {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    color: $color-secondary;
+    @include small-text;
+
+    margin-bottom: 4px;
+  }
+
+  &__content {
+    border-radius: 4px;
+    box-shadow: 0 0.25em 0.5em -0.1em rgba(10, 10, 10, 0.15),
+      0 0.1em 0.2em rgba(10, 10, 10, 0.05);
+    padding: 0.5rem 0;
+  }
+
+  &__item {
+    padding: 0.3rem 1rem;
+
+    color: $color-primary;
+    font-family: $font-semibold;
+    font-size: 14px;
+
+    &--active {
+      color: $color-white;
+      background-color: $color-primary;
+    }
+
+    &:not(&--active):hover {
+      background-color: $color-bgc-and-hbr;
+    }
+  }
+
+  &__link {
+    display: block;
+    color: inherit;
+  }
+}

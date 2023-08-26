@@ -1,29 +1,40 @@
+import { useContext } from 'react';
+
 import Carousel from '../../components/Carousel/Carousel';
 import { Categories } from '../../components/Categories/Categories';
 import { HotPrices } from '../../components/HotPrices/HotPrices';
 import { NewModels } from '../../components/NewModels/NewModels';
 import './HomePage.scss';
+import { ProductsContext } from '../../helpers/ProductsContext';
+import { ErrorMessage } from '../../components/ErrorMessage/ErrorMessage';
+import { Loader } from '../../components/Loader/Loader';
 
 export const HomePage = () => {
+  const { isError, isLoading } = useContext(ProductsContext);
+
   return (
     <main className="home-page">
-      <div className="home-page__content">
-        <div className="home-page__carousel">
-          <Carousel />
-        </div>
+      {!isLoading && isError && <ErrorMessage />}
 
-        <div className="home-page__hot-prices">
-          <HotPrices />
-        </div>
+      {!isError && (
+        <div className="home-page__content">
+          <div className="home-page__carousel">
+            <Carousel />
+          </div>
 
-        <div className="home-page__categories">
-          <Categories />
-        </div>
+          <div className="home-page__hot-prices">
+            {isLoading ? <Loader /> : <HotPrices />}
+          </div>
 
-        <div className="home-page__new-models">
-          <NewModels />
+          <div className="home-page__categories">
+            <Categories />
+          </div>
+
+          <div className="home-page__new-models">
+            {isLoading ? <NewModels /> : <NewModels />}
+          </div>
         </div>
-      </div>
+      )}
     </main>
   );
 };

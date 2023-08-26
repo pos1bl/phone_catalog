@@ -1,16 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 
-import { ProductCard as Phone } from '../../types/ProductCard';
+import { Product } from '../../types/Product';
 import arrowRight from '../../images/arrows/arrow-right.svg';
 import arrowLeft from '../../images/arrows/arrow-left.svg';
 import arrowRightDisabled from '../../images/arrows/arrow-right--disabled.svg';
 import arrowLeftDisabled from '../../images/arrows/arrow-left--disabled.svg';
-import { PhoneCard } from '../PhoneCard/PhoneCard';
+import { ProductCard } from '../ProductCard/ProductCard';
 import './PhoneCarousel.scss';
 
 type Props = {
-  phones: Phone[],
+  phones: Product[],
   title: string,
 };
 
@@ -119,7 +119,7 @@ export const PhoneCarousel: React.FC<Props> = ({ phones, title }) => {
         <ul className="phone-carousel__list" ref={listRef}>
           {phones.map(phone => (
             <li key={phone.id} className="phone-carousel__item">
-              <PhoneCard phone={phone} />
+              <ProductCard product={phone} />
             </li>
           ))}
         </ul>

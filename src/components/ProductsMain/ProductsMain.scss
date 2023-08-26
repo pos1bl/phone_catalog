@@ -1,0 +1,22 @@
+@import "../../style/vars";
+@import "../../style/mixins";
+
+.products {
+  &__navbar {
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    @include title;
+    color: $color-primary;
+
+    margin-bottom: 8px;
+  }
+
+  &__caption {
+    @include body-text;
+    color: $color-secondary;
+
+    margin-bottom: 40px;
+  }
+}

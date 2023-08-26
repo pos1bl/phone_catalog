@@ -1,8 +1,6 @@
 @import "../../style/vars";
 @import "../../style/mixins";
 
-$height: 64px;
-
 .header {
   padding-left: 24px;
   box-shadow: 0 1px $color-elements;
@@ -11,7 +9,7 @@ $height: 64px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: $height;
+    height: $header-height;
 
     color: $color-secondary;
     font-family: $font-bold;

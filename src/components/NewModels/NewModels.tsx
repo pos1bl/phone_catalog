@@ -2,15 +2,19 @@ import { useState, useEffect } from 'react';
 
 import { PhoneCarousel } from '../PhoneCarousel/PhoneCarousel';
 import { getBrandNewProducts } from '../../helpers/api';
-import { ProductCard } from '../../types/ProductCard';
+import { Product } from '../../types/Product';
 import Products from '../../helpers/data/products';
 
 export const NewModels = () => {
-  const [phones, setPhones] = useState<ProductCard[]>([]);
+  const [phones, setPhones] = useState<Product[]>([]);
 
   useEffect(() => {
     getBrandNewProducts(Products.PHONES)
-      .then(setPhones);
+      .then(setPhones)
+      .catch(error => {
+        // eslint-disable-next-line no-console
+        console.error('Error fetching new products:', error);
+      });
   }, []);
 
   return (

@@ -2,3 +2,9 @@
 @import "./style/vars";
 @import "./style/typoghraphy";
 @import "./style/mixins";
+
+.App {
+  &__main {
+    min-height: calc(100vh - #{$header-height} - #{$footer-height});
+  }
+}

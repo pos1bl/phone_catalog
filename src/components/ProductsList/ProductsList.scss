@@ -1,0 +1,8 @@
+@import "../../style/vars";
+
+.products-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, $card-width);
+  grid-column-gap: 16px;
+  grid-row-gap: 40px;
+}

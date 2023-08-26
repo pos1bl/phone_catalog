@@ -1,14 +1,16 @@
 import { Outlet } from 'react-router-dom';
 
-import './App.scss';
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
+import './App.scss';
 
 const App = () => (
   <div className="App">
     <Header />
 
-    <Outlet />
+    <div className="App__main">
+      <Outlet />
+    </div>
 
     <Footer />
   </div>

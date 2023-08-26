@@ -1,0 +1,6 @@
+@import "../../style/vars";
+@import "../../style/mixins";
+
+.phones-page {
+  @include product-page;
+}
