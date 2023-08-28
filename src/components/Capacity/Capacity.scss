@@ -1,0 +1,44 @@
+@import "../../style/vars";
+@import "../../style/mixins";
+
+.capacity {
+  &__title {
+    color: $color-secondary;
+    @include small-text;
+
+    margin-bottom: 8px;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    height: 32px;
+    padding: 7px 8px 4px;
+
+    border: 1px solid $color-icons;
+    color: $color-primary;
+    @include body-text;
+
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
+
+    &:not(&--active):hover {
+      background-color: $color-bgc-and-hbr;
+    }
+
+    &--active {
+      color: $color-white;
+      background-color: $color-primary;
+      border-color: $color-primary;
+    }
+  }
+  
+  &__link {
+    display: block;
+
+    color: inherit;
+  }
+}

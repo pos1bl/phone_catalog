@@ -1,7 +1,7 @@
 @import "../../style/vars";
 @import "../../style/mixins";
 
-.navbar {
+.bread-crumbs{
   display: flex;
   align-items: center;
 
@@ -23,21 +23,13 @@
   }
 
   &__caption {
-    text-transform: capitalize;
+    @include bread-crumbs;
     color: $color-secondary;
-    font-family: $font-semibold;
-    font-size: 12px;
-    line-height: 12px;
-    padding-top: 1.5px;
   }
 
   &__link {
-    text-transform: capitalize;
+    @include bread-crumbs;
     color: $color-primary;
-    font-family: $font-semibold;
-    font-size: 12px;
-    line-height: 12px;
-    padding-top: 1.5px;
 
     margin-right: 8px;
   }

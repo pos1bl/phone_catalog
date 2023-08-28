@@ -39,10 +39,24 @@
     background-color: inherit;
     cursor: pointer;
   }
+
+  &__logo {
+    transition: transform $transition-time;
+
+    &:hover {
+      transform: scale($scale-value);
+    }
+  }
 }
 
 .button {
+  transition: color $transition-time;
+
   &__text {
     margin-right: 16px;
+  }
+
+  &:hover {
+    color: $color-primary;
   }
 }

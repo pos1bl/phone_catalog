@@ -52,6 +52,7 @@ export const Footer = () => (
         onClick={handleClick}
       >
         <span className="button__text">Back to top</span>
+
         <div className="button__image">
           <img src={arrowUp} alt="arrow up" />
         </div>

@@ -1,0 +1,30 @@
+@import "../../style/vars";
+@import "../../style/mixins";
+
+.product-details {
+  &__title {
+    color: $color-primary;
+    @include title;
+
+    margin-bottom: 40px;
+  }
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__photocard {
+    display: flex;
+
+    margin-bottom: 80px;
+  }
+
+  &__left-info {
+    max-width: 560px;
+    margin-right: 64px;
+  }
+
+  &__info {
+    margin-bottom: 107px;
+  }
+}

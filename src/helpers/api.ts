@@ -1,5 +1,6 @@
 import { Product } from '../types/Product';
-import API_URL from './data/api-url';
+import { ProductDetails } from '../types/ProductDetails';
+import { PRODUCTS_URL, PRODUCT_DETAILS_URL, JSON_URL } from './data/api-urls';
 import Products from './data/products';
 
 type FetchProducts = (
@@ -7,8 +8,15 @@ type FetchProducts = (
   amount?: number,
 ) => Promise<Product[]>;
 
+type FetchSuggestedProducts = (
+  category: Products,
+  product: ProductDetails,
+) => Promise<Product[]>;
+
+type FetchProductDetails = (id: string) => Promise<ProductDetails>;
+
 export const getProducts: FetchProducts = (category) => {
-  return fetch(API_URL)
+  return fetch(PRODUCTS_URL)
     .then(response => {
       if (!response.ok) {
         throw Error('Failed to fetch products');
@@ -39,4 +47,27 @@ export const getBrandNewProducts: FetchProducts = async (category) => {
   return products
     .filter(product => product.year >= lastYear - 1)
     .sort((product1, product2) => (product2.price - product1.price));
+};
+
+export const getSuggestedProducts: FetchSuggestedProducts = async (
+  category,
+  product,
+) => {
+  const { priceDiscount, id } = product;
+  const products = await getProducts(category);
+
+  return products.filter(({ price, itemId }) => price > priceDiscount - 500
+    && price < priceDiscount + 500
+    && itemId !== id);
+};
+
+export const getProductDetails: FetchProductDetails = (id) => {
+  return fetch(PRODUCT_DETAILS_URL + id + JSON_URL)
+    .then(response => {
+      if (!response.ok) {
+        throw Error('Failed to fetch product details');
+      }
+
+      return response.json();
+    });
 };

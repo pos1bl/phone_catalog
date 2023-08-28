@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 
 import { ProductsMain } from '../../components/ProductsMain/ProductsMain';
-import { ProductsContext } from '../../helpers/ProductsContext';
+import { ProductsContext } from '../../helpers/context/ProductsContext';
 import './TabletsPage.scss';
 
 export const TabletsPage = () => {

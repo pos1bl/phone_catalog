@@ -1,0 +1,23 @@
+@import "../../style/vars";
+@import "../../style/mixins";
+
+.main-properties {
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    @include small-text;
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__property {
+    color: $color-secondary;
+    text-transform: capitalize;
+  }
+
+  &__value {
+    color: $color-primary;
+  }
+}

@@ -1,0 +1,32 @@
+@import "../../style/vars";
+@import "../../style/mixins";
+
+.description {
+  &__title {
+    @include h2;
+    margin-bottom: 16px;
+  }
+
+  &__line {
+    border: none;
+    background-color: $color-elements;
+    height: 1px;
+
+    margin-bottom: 32px;
+  }
+
+  &__topic {
+    margin-bottom: 32px;
+  }
+
+  &__caption {
+    color: $color-primary;
+    @include caption;
+    margin-bottom: 16px;
+  }
+
+  &__article {
+    color: $color-secondary;
+    @include body-text;
+  }
+}

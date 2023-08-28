@@ -1,17 +1,19 @@
 import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 
-import './Navbar.scss';
+import './BreadCrumbs.scss';
 import home from '../../images/home.svg';
-import { CurrentProductsContext } from '../../helpers/CurrentProductsContext';
+import {
+  CurrentProductsContext,
+} from '../../helpers/context/CurrentProductsContext';
 
-export const Navbar = () => {
+export const BreadCrumbs = () => {
   const { location } = useContext(CurrentProductsContext);
   const currentLocation = location.split('/');
 
   return (
-    <div className="navbar">
-      <NavLink className="navbar__home" to="/">
+    <div className="bread-crumbs" data-cy="breadCrumbs">
+      <NavLink className="bread-crumbs__home" to="/">
         <img src={home} alt="home" />
       </NavLink>
 
@@ -23,15 +25,15 @@ export const Navbar = () => {
         }
 
         return (
-          <div key={path} className="navbar__wrapper">
-            <div className="navbar__arrow" />
+          <div key={path} className="bread-crumbs__wrapper">
+            <div className="bread-crumbs__arrow" />
 
             {id === currentLocation.length - 1
               ? (
-                <div className="navbar__caption">{link}</div>
+                <div className="bread-crumbs__caption">{link}</div>
               )
               : (
-                <NavLink className="navbar__link" to={`/${link}`}>
+                <NavLink className="bread-crumbs__link" to={`/${link}`}>
                   {link}
                 </NavLink>
               )}

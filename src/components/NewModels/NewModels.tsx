@@ -18,11 +18,9 @@ export const NewModels = () => {
   }, []);
 
   return (
-    <div className="hot-prices">
-      <PhoneCarousel
-        phones={phones}
-        title="Brand New Models"
-      />
-    </div>
+    <PhoneCarousel
+      phones={phones}
+      title="Brand New Models"
+    />
   );
 };

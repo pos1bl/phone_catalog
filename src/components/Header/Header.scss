@@ -23,6 +23,12 @@
 
   &__logo {
     margin-right: 64px;
+
+    transition: transform $transition-time;
+
+    &:hover {
+      transform: scale($scale-value);
+    }
   }
 
   &__list {
@@ -38,16 +44,28 @@
   &__link {
     @include link;
 
+    &::before {
+      position: absolute;
+      content: "";
+      height: 3px;
+      bottom: -24px;
+      background-color: $color-primary;
+      width: 100%;
+      transform: scale(0);
+      transition: transform $transition-time;
+    }
+
+    &:hover {
+      &::before {
+        transform: scale(1);
+      }
+    }
+
     &--active {
       color: $color-primary;
 
       &::before {
-        position: absolute;
-        content: "";
-        height: 3px;
-        bottom: -24px;
-        background-color: $color-primary;
-        width: 100%;
+        transform: scale(1);
       }
     }
   }
@@ -73,21 +91,31 @@
   position: relative;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 16px 16px;
 
-  width: 16px;
+  width: 100%;
   padding-bottom: 100%;
+
+  &::before {
+    position: absolute;
+    content: "";
+    height: 3px;
+    bottom: 0;
+    background-color: $color-primary;
+    width: 100%;
+    transform: scale(0);
+    transition: transform $transition-time;
+  }
+
+  &:hover {
+    &::before {
+      transform: scale(1);
+    }
+  }
 
   &--active {
     &::before {
-      position: absolute;
-      content: "";
-      height: 3px;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: $color-primary;
-      width: 400%;
+      transform: scale(1);
     }
   }
 

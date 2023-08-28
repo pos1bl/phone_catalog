@@ -1,14 +1,16 @@
 import { useContext } from 'react';
 
 import { Product } from '../../types/Product';
-import { Navbar } from '../Navbar/Navbar';
+import { BreadCrumbs } from '../BreadCrumbs/BreadCrumbs';
 import { ProductsContainer } from '../ProductsContainer/ProductsContainer';
-import { ProductsContext } from '../../helpers/ProductsContext';
+import { ProductsContext } from '../../helpers/context/ProductsContext';
 import { Loader } from '../Loader/Loader';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 import './ProductsMain.scss';
-import { CurrentProductsContext } from '../../helpers/CurrentProductsContext';
 import { NoResult } from '../NoResult/NoResult';
+import {
+  CurrentProductsContext,
+} from '../../helpers/context/CurrentProductsContext';
 
 type Props = {
   title: string,
@@ -21,8 +23,8 @@ export const ProductsMain: React.FC<Props> = ({ title, products }) => {
 
   return (
     <main className="products">
-      <section className="products__navbar">
-        <Navbar />
+      <section className="products__bread-crumbs">
+        <BreadCrumbs />
       </section>
 
       <h1 className="products__title">

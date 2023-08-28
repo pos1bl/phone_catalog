@@ -1,14 +1,16 @@
 import { useContext, useState } from 'react';
 
-import { CurrentProductsContext } from '../../helpers/CurrentProductsContext';
 import SortOptions from '../../helpers/data/sort-options';
-import './ProductsContainer.scss';
 import { DropDown } from '../DropDown/DropDown';
 import PressedOptions from '../../helpers/data/pressed-options';
 import { AmountOptions } from '../../helpers/data/amount-options';
 import { Pagination } from '../Pagination/Pagination';
 import { ProductsList } from '../ProductsList/ProductsList';
 import { Product } from '../../types/Product';
+import {
+  CurrentProductsContext,
+} from '../../helpers/context/CurrentProductsContext';
+import './ProductsContainer.scss';
 
 type Props = {
   currentProducts: Product[];

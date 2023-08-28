@@ -78,7 +78,7 @@
 
     &:hover {
       .categories__image {
-        transform: scale(1.1);
+        transform: scale($scale-value);
       }
 
       .categories__image-wrapper::before {

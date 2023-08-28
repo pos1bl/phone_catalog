@@ -5,7 +5,7 @@ import { Categories } from '../../components/Categories/Categories';
 import { HotPrices } from '../../components/HotPrices/HotPrices';
 import { NewModels } from '../../components/NewModels/NewModels';
 import './HomePage.scss';
-import { ProductsContext } from '../../helpers/ProductsContext';
+import { ProductsContext } from '../../helpers/context/ProductsContext';
 import { ErrorMessage } from '../../components/ErrorMessage/ErrorMessage';
 import { Loader } from '../../components/Loader/Loader';
 
@@ -31,7 +31,7 @@ export const HomePage = () => {
           </div>
 
           <div className="home-page__new-models">
-            {isLoading ? <NewModels /> : <NewModels />}
+            {isLoading ? <Loader /> : <NewModels />}
           </div>
         </div>
       )}

@@ -3,7 +3,7 @@ import { useContext } from 'react';
 
 import categoryImages from '../../helpers/data/categories-images';
 import './Categories.scss';
-import { ProductsContext } from '../../helpers/ProductsContext';
+import { ProductsContext } from '../../helpers/context/ProductsContext';
 
 export const Categories = () => {
   const { phones, tablets, accessories } = useContext(ProductsContext);

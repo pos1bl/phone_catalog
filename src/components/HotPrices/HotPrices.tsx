@@ -18,11 +18,9 @@ export const HotPrices = () => {
   }, []);
 
   return (
-    <div className="hot-prices">
-      <PhoneCarousel
-        phones={phones}
-        title="Hot prices"
-      />
-    </div>
+    <PhoneCarousel
+      phones={phones}
+      title="Hot prices"
+    />
   );
 };

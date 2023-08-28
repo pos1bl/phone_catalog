@@ -18,6 +18,14 @@
     border: 1px solid $color-icons;
     background-color: $color-white;
     cursor: pointer;
+
+    &:hover {
+      border-color: $color-secondary;
+    }
+
+    &:focus {
+      border-color: $color-primary;
+    }
   }
 
   &__menu {
@@ -65,7 +73,7 @@
   &__item {
     padding: 0.3rem 1rem;
 
-    color: $color-primary;
+    color: $color-secondary;
     font-family: $font-semibold;
     font-size: 14px;
 
@@ -75,6 +83,7 @@
     }
 
     &:not(&--active):hover {
+      color: $color-primary;
       background-color: $color-bgc-and-hbr;
     }
   }

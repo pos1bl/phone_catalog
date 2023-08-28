@@ -58,3 +58,13 @@
   margin: 0 auto;
   padding: 24px 0 80px;
 }
+
+@mixin bread-crumbs {
+  text-transform: capitalize;
+  font-family: $font-semibold;
+  font-size: 12px;
+  line-height: 12px;
+  padding-top: 2px;
+
+  margin-right: 8px;
+}

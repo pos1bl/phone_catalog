@@ -2,6 +2,7 @@ import classNames from 'classnames';
 
 import { SearchLink } from '../SearchLink/SearchLink';
 import arrowBottom from '../../images/arrows/arrow-bottom.svg';
+import arrowUp from '../../images/arrows/arrow-top--dropdown.svg';
 import PressedOptions from '../../helpers/data/pressed-options';
 import './DropDown.scss';
 
@@ -44,7 +45,10 @@ export const DropDown: React.FC<Props> = ({
           onClick={() => setPressedOption(pressedOption)}
         >
           {buttonTitle ? <span>{buttonTitle}</span> : <span>Choose</span>}
-          <img src={arrowBottom} alt="bottom" />
+          <img
+            src={pressed !== pressedOption ? arrowBottom : arrowUp}
+            alt="bottom"
+          />
         </button>
       </div>
 

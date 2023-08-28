@@ -1,0 +1,89 @@
+@import "../../style/vars";
+@import "../../style/mixins";
+
+.product-info {
+  max-width: 312px;
+
+  &__colors {
+    margin-bottom: 24px;
+  }
+
+  &__line {
+    height: 1px;
+    border: none;
+    background-color: $color-elements;
+
+    margin-bottom: 24px;
+
+    &--bottom {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__capacity {
+    margin-bottom: 24px;
+  }
+
+  &__price-container {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 16px;
+  }
+
+  &__current-price {
+    margin-right: 8px;
+
+    color: $color-primary;
+    @include title;
+  }
+
+  &__full-price {
+    text-decoration: line-through;
+    color: $color-secondary;
+    font-family: $font-regular;
+    font-size: 22px;
+    line-height: 31px;
+  }
+
+  &__buttons {
+    display: flex;
+
+    margin-bottom: 32px;
+  }
+
+  &__cart-button {
+    margin-right: 8px;
+
+    width: 263px;
+    height: 48px;
+
+    background-color: $color-primary;
+    color: $color-white;
+    @include buttons;
+    cursor: pointer;
+    transition: box-shadow $transition-time;
+
+    &:hover {
+      box-shadow: 0 3px 13px 0 #17203142;
+    }
+  }
+
+  &__favourite-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    width: 48px;
+    height: 48px;
+
+    background-color: $color-white;
+    border: solid 1px $color-icons;
+    transition: border-color $transition-time;
+
+    &:hover {
+      border-color: $color-primary;
+    }
+  }
+}

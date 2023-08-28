@@ -1,7 +1,13 @@
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
+
 import { Properties } from '../../helpers/data/properties';
 import { Product } from '../../types/Product';
 import favouriteIcon from '../../images/favourites.svg';
 import './ProductCard.scss';
+import {
+  CurrentProductsContext,
+} from '../../helpers/context/CurrentProductsContext';
 
 type Props = {
   product: Product;
@@ -14,29 +20,37 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
     fullPrice,
     price,
     image,
+    category,
   } = product;
+
+  const { searchParams } = useContext(CurrentProductsContext);
 
   return (
     <div className="phone-card" data-cy="cardsContainer">
-      <img
-        src={`_new/${image}`}
-        alt={itemId}
-        className="phone-card__image"
-      />
+      <Link
+        to={`/${category}/${itemId}`}
+        state={{ search: searchParams.toString() }}
+      >
+        <img
+          src={`_new/${image}`}
+          alt={itemId}
+          className="phone-card__image"
+        />
 
-      <h3 className="phone-card__title">
-        {name}
-      </h3>
+        <h3 className="phone-card__title">
+          {name}
+        </h3>
 
-      <div className="phone-card__price-container price-container">
-        <h2 className="price-container__current-price">
-          {`$${price}`}
-        </h2>
+        <div className="phone-card__price-container price-container">
+          <h2 className="price-container__current-price">
+            {`$${price}`}
+          </h2>
 
-        <h2 className="price-container__full-price">
-          {`$${fullPrice}`}
-        </h2>
-      </div>
+          <h2 className="price-container__full-price">
+            {`$${fullPrice}`}
+          </h2>
+        </div>
+      </Link>
 
       <hr className="phone-card__line" />
 

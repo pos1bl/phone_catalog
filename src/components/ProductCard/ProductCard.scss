@@ -22,7 +22,7 @@
 
     .phone-card__image {
       transition: transform $transition-time;
-      transform: scale(1.1);
+      transform: scale($scale-value);
     }
   }
 
@@ -68,6 +68,11 @@
     color: $color-white;
     @include buttons;
     cursor: pointer;
+    transition: box-shadow $transition-time;
+
+    &:hover {
+      box-shadow: 0 3px 13px 0 #17203142;
+    }
   }
 
   &__favourite-button {
@@ -81,6 +86,11 @@
 
     background-color: $color-white;
     border: solid 1px $color-icons;
+    transition: border-color $transition-time;
+
+    &:hover {
+      border-color: $color-primary;
+    }
   }
 }
 
