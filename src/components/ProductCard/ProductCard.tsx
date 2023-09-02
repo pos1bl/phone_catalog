@@ -1,16 +1,24 @@
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Properties } from '../../helpers/data/properties';
-import { Product } from '../../types/Product';
 import favouriteIcon from '../../images/favourites.svg';
-import './ProductCard.scss';
+import favouriteIconSelected from '../../images/favourites-selected.svg';
 import {
   CurrentProductsContext,
 } from '../../helpers/context/CurrentProductsContext';
+import { CartContext } from '../../helpers/context/CartContext';
+import { handleAdd, handleDelete } from '../../helpers/cartHelper';
+import {
+  handleAdd as handleAddFav,
+  handleDelete as handleDeleteFav,
+} from '../../helpers/favHelper';
+import { FavContext } from '../../helpers/context/FavContext';
+import { UniversalProduct } from '../../types/Cart';
+import './ProductCard.scss';
 
 type Props = {
-  product: Product;
+  product: UniversalProduct;
 };
 
 export const ProductCard: React.FC<Props> = ({ product }) => {
@@ -22,8 +30,45 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
     image,
     category,
   } = product;
-
   const { searchParams } = useContext(CurrentProductsContext);
+  const { cartProducts, setCartProducts } = useContext(CartContext);
+  const { favProducts, setFavProducts } = useContext(FavContext);
+  const [isAddedCart, setIsAddedCart] = useState(false);
+  const [isAddedFav, setIsAddedFav] = useState(false);
+
+  useEffect(() => {
+    const isAddCart = cartProducts
+      .find(({ product: curProduct }) => curProduct.itemId === itemId);
+    const isAddFav = favProducts
+      .find(({ itemId: id }) => id === itemId);
+
+    setIsAddedCart(!!isAddCart);
+    setIsAddedFav(!!isAddFav);
+  });
+
+  const handleAddToCart = () => handleAdd({
+    setIsAdded: setIsAddedCart,
+    product,
+    setCartProducts,
+  });
+
+  const handleDeleteFromCart = () => handleDelete({
+    setIsAdded: setIsAddedCart,
+    product,
+    setCartProducts,
+  });
+
+  const handleAddToFav = () => handleAddFav({
+    setIsAdded: setIsAddedFav,
+    product,
+    setFavProducts,
+  });
+
+  const handleDeleteFromFav = () => handleDeleteFav({
+    setIsAdded: setIsAddedFav,
+    product,
+    setFavProducts,
+  });
 
   return (
     <div className="phone-card" data-cy="cardsContainer">
@@ -75,19 +120,45 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
       </ul>
 
       <div className="phone-card__buttons">
-        <button
-          type="button"
-          className="phone-card__cart-button"
-        >
-          Add to cart
-        </button>
+        {isAddedCart ? (
+          <button
+            type="button"
+            className="
+              phone-card__cart-button
+              phone-card__cart-button--selected
+              "
+            onClick={handleDeleteFromCart}
+          >
+            Added to cart
+          </button>
+        ) : (
+          <button
+            type="button"
+            className="phone-card__cart-button"
+            onClick={handleAddToCart}
+          >
+            Add to cart
+          </button>
+        )}
 
-        <button
-          type="button"
-          className="phone-card__favourite-button"
-        >
-          <img src={favouriteIcon} alt="favourite icon" />
-        </button>
+        {isAddedFav ? (
+          <button
+            data-cy="addToFavorite"
+            type="button"
+            className="phone-card__favourite-button"
+            onClick={handleDeleteFromFav}
+          >
+            <img src={favouriteIconSelected} alt="favourite icon" />
+          </button>
+        ) : (
+          <button
+            type="button"
+            className="phone-card__favourite-button"
+            onClick={handleAddToFav}
+          >
+            <img src={favouriteIcon} alt="favourite icon" />
+          </button>
+        )}
       </div>
     </div>
   );

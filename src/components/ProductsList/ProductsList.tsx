@@ -1,16 +1,16 @@
 import React from 'react';
-import { Product } from '../../types/Product';
 import { ProductCard } from '../ProductCard/ProductCard';
 import './ProductsList.scss';
+import { UniversalProduct } from '../../types/Cart';
 
 type Props = {
-  productsPerPage: Product[];
+  productsPerPage: UniversalProduct[];
 };
 
 export const ProductsList: React.FC<Props> = ({ productsPerPage }) => (
   <ul data-cy="productList" className="products-list">
     {productsPerPage.map(product => (
-      <li className="products-list__item" key={product.id}>
+      <li className="products-list__item" key={product.itemId}>
         <ProductCard product={product} />
       </li>
     ))}

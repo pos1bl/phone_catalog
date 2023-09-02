@@ -8,9 +8,9 @@ const App = () => (
   <div className="App">
     <Header />
 
-    <div className="App__main">
+    <main className="App__main">
       <Outlet />
-    </div>
+    </main>
 
     <Footer />
   </div>

@@ -1,8 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
-import { Link, useLocation, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import { BreadCrumbs } from '../../components/BreadCrumbs/BreadCrumbs';
-import arrowLeft from '../../images/arrows/arrow-left.svg';
 import './ProductDetailsPage.scss';
 import { Loader } from '../../components/Loader/Loader';
 import { ErrorMessage } from '../../components/ErrorMessage/ErrorMessage';
@@ -14,11 +13,11 @@ import { ProductsContext } from '../../helpers/context/ProductsContext';
 import {
   Recommendations,
 } from '../../components/Recommendations/Recommendations';
+import { BackButton } from '../../components/BackButton/BackButton';
 
 export const ProductDetailsPage = () => {
   const { isLoading } = useContext(ProductsContext);
   const { productId } = useParams();
-  const { state } = useLocation();
 
   const [product, setProduct] = useState<ProductType | null>(null);
   const [productIsLoading, setProductIsLoading] = useState(false);
@@ -42,21 +41,9 @@ export const ProductDetailsPage = () => {
         <BreadCrumbs />
       </section>
 
-      <Link
-        to={{ pathname: '..', search: state?.search }}
-        data-cy="backButton"
-        className="product-details-page__back-container"
-      >
-        <img
-          src={arrowLeft}
-          alt="back"
-          className="product-details-page__back-arrow"
-        />
-
-        <span className="product-details-page__back">
-          Back
-        </span>
-      </Link>
+      <section className="product-details-page__back">
+        <BackButton />
+      </section>
 
       {productIsLoading && <Loader />}
 

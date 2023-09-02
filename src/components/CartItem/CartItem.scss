@@ -1,0 +1,115 @@
+@import "../../style/vars";
+@import "../../style/mixins";
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  padding: 24px;
+
+  width: 752px;
+  height: 128px;
+
+  border: 1px solid $color-elements;
+
+  &__delete {
+    width: 16px;
+    height: 16px;
+    margin-right: 24px;
+
+    cursor: pointer;
+    background-image: url("../../images/delete.svg");
+    transition: background-image $transition-time;
+
+    &:hover {
+      background-image: url("../../images/delete-active.svg");
+    }
+  }
+
+  &__image {
+    width: 95%;
+    height: 95%;
+    object-fit: contain;
+    transition: transform $transition-time;
+  }
+
+  &__image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 80px;
+    height: 80px;
+    margin-right: 24px;
+
+    &:hover {
+      .cart-item__image {
+        transform: scale($scale-value);
+      }
+    }
+
+    
+  }
+
+  &__title {
+    width: 295px;
+    color: $color-primary;
+    @include body-text;
+
+    margin-right: 50px;
+  }
+
+  &__reducer {
+    margin-right: 45px;
+  }
+
+  &__price {
+    color: $color-primary;
+    @include h2;
+  }
+}
+
+.reducer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 96px;
+
+  &__button {
+    width: 32px;
+    height: 32px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid $color-icons;
+    transition: border-color $transition-time;
+    cursor: pointer;
+
+    &:hover {
+      border-color: $color-primary;
+    }
+
+    &--subtract {
+      background-image: url("../../images/minus.svg");
+    }
+
+    &--add {
+      background-image: url("../../images/plus.svg");
+    }
+
+    &--subtract-inactive {
+      background-image: url("../../images/minus-inactive.svg");
+      @include inactive-button;
+    }
+
+    
+    &--add-inactive {
+      background-image: url("../../images/plus-inactive.svg");
+      @include inactive-button;
+    }
+  }
+
+  &__quantity {
+    color: $color-primary;
+    @include body-text;
+  }
+}

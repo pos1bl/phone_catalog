@@ -15,13 +15,13 @@
     width: 208px;
     height: 208px;
     object-fit: contain;
+    transition: transform $transition-time;
   }
 
   &:hover {
     box-shadow: 0 0 11px $color-secondary;
 
     .phone-card__image {
-      transition: transform $transition-time;
       transform: scale($scale-value);
     }
   }
@@ -73,6 +73,12 @@
     &:hover {
       box-shadow: 0 3px 13px 0 #17203142;
     }
+
+    &--selected {
+      background-color: $color-white;
+      border: 1px solid $color-elements;
+      color: $color-green;
+    }
   }
 
   &__favourite-button {
@@ -84,7 +90,6 @@
     width: 40px;
     height: 40px;
 
-    background-color: $color-white;
     border: solid 1px $color-icons;
     transition: border-color $transition-time;
 

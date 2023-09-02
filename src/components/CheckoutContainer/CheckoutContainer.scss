@@ -1,0 +1,44 @@
+@import "../../style/vars";
+@import "../../style/mixins";
+
+.checkout-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 24px;
+  text-align: center;
+
+  border: 1px solid $color-elements;
+
+  &__price {
+    @include title;
+  }
+
+  &__total {
+    color: $color-secondary;
+    @include body-text;
+    margin-bottom: 24px;
+  }
+
+  &__line {
+    border: none;
+    background-color: $color-elements;
+    height: 1px;
+
+    margin-bottom: 24px;
+  }
+
+  &__button {
+    width: 320px;
+    height: 48px;
+
+    background-color: $color-primary;
+    color: $color-white;
+    @include body-text;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 3px 13px 0 #17203142;
+    }
+  }
+}

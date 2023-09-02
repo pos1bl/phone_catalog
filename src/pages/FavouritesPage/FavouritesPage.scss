@@ -1,8 +1,10 @@
 @import "../../style/vars";
 @import "../../style/mixins";
 
-.products {
-  &__bread-crumbs {
+.favourites-page {
+  @include product-page;
+
+  &__back {
     margin-bottom: 40px;
   }
 
@@ -17,5 +19,9 @@
     color: $color-secondary;
 
     margin-bottom: 40px;
+  }
+
+  &__content {
+    display: flex;
   }
 }

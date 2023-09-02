@@ -20,30 +20,36 @@ import {
 import {
   ProductDetailsPage,
 } from './pages/ProductDetailsPage/ProductDetailsPage';
+import { CartProvider } from './helpers/context/CartContext';
+import { FavProvider } from './helpers/context/FavContext';
 
 export const Root = () => (
   <Router>
     <ProductsProvider>
       <CurrentProductsProvider>
-        <Routes>
-          <Route path="/" element={<App />}>
-            <Route index element={<HomePage />} />
-            <Route path="home" element={<Navigate to="/" />} />
-            <Route path="phones">
-              <Route index element={<PhonesPage />} />
-              <Route path=":productId" element={<ProductDetailsPage />} />
-            </Route>
-            <Route path="tablets" element={<TabletsPage />}>
-              <Route path=":productId" />
-            </Route>
-            <Route path="accessories" element={<AccessoriesPage />}>
-              <Route path=":productId" />
-            </Route>
-            <Route path="favourites" element={<FavouritesPage />} />
-            <Route path="cart" element={<CartPage />} />
-            <Route path="*" element={<InvalidPage />} />
-          </Route>
-        </Routes>
+        <CartProvider>
+          <FavProvider>
+            <Routes>
+              <Route path="/" element={<App />}>
+                <Route index element={<HomePage />} />
+                <Route path="home" element={<Navigate to="/" />} />
+                <Route path="phones">
+                  <Route index element={<PhonesPage />} />
+                  <Route path=":productId" element={<ProductDetailsPage />} />
+                </Route>
+                <Route path="tablets" element={<TabletsPage />}>
+                  <Route path=":productId" />
+                </Route>
+                <Route path="accessories" element={<AccessoriesPage />}>
+                  <Route path=":productId" />
+                </Route>
+                <Route path="favourites" element={<FavouritesPage />} />
+                <Route path="cart" element={<CartPage />} />
+                <Route path="*" element={<InvalidPage />} />
+              </Route>
+            </Routes>
+          </FavProvider>
+        </CartProvider>
       </CurrentProductsProvider>
     </ProductsProvider>
   </Router>

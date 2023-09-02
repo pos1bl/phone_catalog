@@ -1,0 +1,7 @@
+.cart-container {
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+}

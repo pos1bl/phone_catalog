@@ -3,7 +3,6 @@
 
 .product-details {
   &__title {
-    color: $color-primary;
     @include title;
 
     margin-bottom: 40px;
