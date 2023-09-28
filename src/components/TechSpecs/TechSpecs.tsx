@@ -14,7 +14,7 @@ export const TechSpecs: React.FC<Props> = ({ techSpecs }) => (
 
     <ul className="tech-specs__list">
       {Object.entries(techSpecs).map(([property, value]) => (
-        <li className="tech-specs__item">
+        <li className="tech-specs__item" key={value}>
           <span className="tech-specs__property">{property}</span>
           <span className="tech-specs__value">{arrayCheck(value)}</span>
         </li>

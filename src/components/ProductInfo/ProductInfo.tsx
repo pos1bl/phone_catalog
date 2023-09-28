@@ -7,14 +7,13 @@ import favouriteIcon from '../../images/favourites.svg';
 import favouriteIconSelected from '../../images/favourites-selected.svg';
 import { MainProperties } from '../MainProperties/MainProperties';
 import { Properties } from '../../types/Properties';
-import { CartContext } from '../../helpers/context/CartContext';
 import { handleAdd, handleDelete } from '../../helpers/cartHelper';
 import { UniversalProduct } from '../../types/Cart';
-import { FavContext } from '../../helpers/context/FavContext';
 import {
   handleAdd as handleAddFav,
   handleDelete as handleDeleteFav,
 } from '../../helpers/favHelper';
+import { AddedContext } from '../../context/AddedContext';
 import './ProductInfo.scss';
 
 type Props = {
@@ -22,8 +21,12 @@ type Props = {
 };
 
 export const ProductInfo: React.FC<Props> = ({ product }) => {
-  const { cartProducts, setCartProducts } = useContext(CartContext);
-  const { favProducts, setFavProducts } = useContext(FavContext);
+  const {
+    cartProducts,
+    setCartProducts,
+    favProducts,
+    setFavProducts,
+  } = useContext(AddedContext);
   const [isAddedCart, setIsAddedCart] = useState(false);
   const [isAddedFav, setIsAddedFav] = useState(false);
 

@@ -1,10 +1,10 @@
 import { useContext } from 'react';
 
-import { CartContext } from '../../helpers/context/CartContext';
 import './CheckoutContainer.scss';
+import { AddedContext } from '../../context/AddedContext';
 
 export const CheckoutContainer = () => {
-  const { cartProducts, setIsCheckout } = useContext(CartContext);
+  const { cartProducts, setIsCheckout } = useContext(AddedContext);
 
   const totalAmount = cartProducts
     .reduce((accumulator, { quantity }) => accumulator + quantity, 0);

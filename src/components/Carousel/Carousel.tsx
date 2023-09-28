@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 
-import './Carousel.scss';
-import { carouselImages as images } from '../../helpers/data/carousel-images';
+import { carouselImages as images } from '../../data/carousel-images';
 import arrowRight from '../../images/arrows/arrow-right.svg';
 import arrowLeft from '../../images/arrows/arrow-left.svg';
+import './Carousel.scss';
 
 const Carousel = () => {
   const [steps, setSteps] = useState(0);

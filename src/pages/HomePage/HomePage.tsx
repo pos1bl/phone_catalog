@@ -4,10 +4,10 @@ import Carousel from '../../components/Carousel/Carousel';
 import { Categories } from '../../components/Categories/Categories';
 import { HotPrices } from '../../components/HotPrices/HotPrices';
 import { NewModels } from '../../components/NewModels/NewModels';
-import './HomePage.scss';
-import { ProductsContext } from '../../helpers/context/ProductsContext';
+import { ProductsContext } from '../../context/ProductsContext';
 import { ErrorMessage } from '../../components/ErrorMessage/ErrorMessage';
 import { Loader } from '../../components/Loader/Loader';
+import './HomePage.scss';
 
 export const HomePage = () => {
   const { isError, isLoading } = useContext(ProductsContext);

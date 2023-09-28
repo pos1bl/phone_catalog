@@ -1,9 +1,9 @@
 import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 
-import categoryImages from '../../helpers/data/categories-images';
+import categoryImages from '../../data/categories-images';
+import { ProductsContext } from '../../context/ProductsContext';
 import './Categories.scss';
-import { ProductsContext } from '../../helpers/context/ProductsContext';
 
 export const Categories = () => {
   const { phones, tablets, accessories } = useContext(ProductsContext);

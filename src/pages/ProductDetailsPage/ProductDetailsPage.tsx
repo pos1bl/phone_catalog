@@ -2,18 +2,18 @@ import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { BreadCrumbs } from '../../components/BreadCrumbs/BreadCrumbs';
-import './ProductDetailsPage.scss';
 import { Loader } from '../../components/Loader/Loader';
 import { ErrorMessage } from '../../components/ErrorMessage/ErrorMessage';
 import { NoResult } from '../../components/NoResult/NoResult';
 import { ProductDetails } from '../../components/ProductDetails/ProductDetails';
 import { getProductDetails } from '../../helpers/api';
 import { ProductDetails as ProductType } from '../../types/ProductDetails';
-import { ProductsContext } from '../../helpers/context/ProductsContext';
+import { ProductsContext } from '../../context/ProductsContext';
 import {
   Recommendations,
 } from '../../components/Recommendations/Recommendations';
 import { BackButton } from '../../components/BackButton/BackButton';
+import './ProductDetailsPage.scss';
 
 export const ProductDetailsPage = () => {
   const { isLoading } = useContext(ProductsContext);

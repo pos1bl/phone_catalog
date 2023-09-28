@@ -1,7 +1,8 @@
 import React from 'react';
+
 import { ProductCard } from '../ProductCard/ProductCard';
-import './ProductsList.scss';
 import { UniversalProduct } from '../../types/Cart';
+import './ProductsList.scss';
 
 type Props = {
   productsPerPage: UniversalProduct[];

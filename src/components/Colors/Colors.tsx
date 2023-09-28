@@ -1,12 +1,10 @@
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 
-import './Colors.scss';
 import { useContext } from 'react';
-import {
-  CurrentProductsContext,
-} from '../../helpers/context/CurrentProductsContext';
+import { CurrentProductsContext } from '../../context/CurrentProductsContext';
 import { getLink } from '../../helpers/linkHepler';
+import './Colors.scss';
 
 type Props = {
   colors: string[];

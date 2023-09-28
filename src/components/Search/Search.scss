@@ -1,0 +1,12 @@
+@import "../../style/vars";
+@import "../../style/mixins";
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+
+  width: 327px;
+  box-shadow: -1px 0 $color-elements;
+}

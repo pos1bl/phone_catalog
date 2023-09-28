@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 
 import { ProductsMain } from '../../components/ProductsMain/ProductsMain';
-import { ProductsContext } from '../../helpers/context/ProductsContext';
+import { ProductsContext } from '../../context/ProductsContext';
 import './PhonesPage.scss';
 
 export const PhonesPage = () => {

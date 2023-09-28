@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Product } from '../../types/Product';
 import { getHotPriceProducts } from '../../helpers/api';
 import { PhoneCarousel } from '../PhoneCarousel/PhoneCarousel';
-import Products from '../../helpers/data/products';
+import Products from '../../data/products';
 
 export const HotPrices = () => {
   const [phones, setPhones] = useState<Product[]>([]);

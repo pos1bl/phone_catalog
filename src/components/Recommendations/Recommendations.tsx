@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { PhoneCarousel } from '../PhoneCarousel/PhoneCarousel';
 import { Product } from '../../types/Product';
 import { getSuggestedProducts } from '../../helpers/api';
-import Products from '../../helpers/data/products';
+import Products from '../../data/products';
 import { ProductDetails } from '../../types/ProductDetails';
 
 type Props = {

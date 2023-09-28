@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { SearchLink } from '../SearchLink/SearchLink';
 import arrowBottom from '../../images/arrows/arrow-bottom.svg';
 import arrowUp from '../../images/arrows/arrow-top--dropdown.svg';
-import PressedOptions from '../../helpers/data/pressed-options';
+import PressedOptions from '../../data/pressed-options';
 import './DropDown.scss';
 
 type Props = {

@@ -1,20 +1,17 @@
 import { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import { Properties } from '../../helpers/data/properties';
+import { Properties } from '../../data/properties';
 import favouriteIcon from '../../images/favourites.svg';
 import favouriteIconSelected from '../../images/favourites-selected.svg';
-import {
-  CurrentProductsContext,
-} from '../../helpers/context/CurrentProductsContext';
-import { CartContext } from '../../helpers/context/CartContext';
+import { CurrentProductsContext } from '../../context/CurrentProductsContext';
 import { handleAdd, handleDelete } from '../../helpers/cartHelper';
 import {
   handleAdd as handleAddFav,
   handleDelete as handleDeleteFav,
 } from '../../helpers/favHelper';
-import { FavContext } from '../../helpers/context/FavContext';
 import { UniversalProduct } from '../../types/Cart';
+import { AddedContext } from '../../context/AddedContext';
 import './ProductCard.scss';
 
 type Props = {
@@ -31,8 +28,12 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
     category,
   } = product;
   const { searchParams } = useContext(CurrentProductsContext);
-  const { cartProducts, setCartProducts } = useContext(CartContext);
-  const { favProducts, setFavProducts } = useContext(FavContext);
+  const {
+    cartProducts,
+    setCartProducts,
+    favProducts,
+    setFavProducts,
+  } = useContext(AddedContext);
   const [isAddedCart, setIsAddedCart] = useState(false);
   const [isAddedFav, setIsAddedFav] = useState(false);
 

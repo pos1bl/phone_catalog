@@ -4,12 +4,12 @@ import { CartContainer } from '../../components/CartContainer/CartContainer';
 import {
   CheckoutContainer,
 } from '../../components/CheckoutContainer/CheckoutContainer';
-import { CartContext } from '../../helpers/context/CartContext';
 import { EmptyContent } from '../../components/EmptyContent/EmptyContent';
 import './CartPage.scss';
+import { AddedContext } from '../../context/AddedContext';
 
 export const CartPage = () => {
-  const { cartProducts, isCheckout } = useContext(CartContext);
+  const { cartProducts, isCheckout } = useContext(AddedContext);
 
   return (
     <div className="cart-page">

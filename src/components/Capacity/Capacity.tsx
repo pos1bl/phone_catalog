@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 
 import { getLink } from '../../helpers/linkHepler';
-import {
-  CurrentProductsContext,
-} from '../../helpers/context/CurrentProductsContext';
+import { CurrentProductsContext } from '../../context/CurrentProductsContext';
 import './Capacity.scss';
 
 type Props = {

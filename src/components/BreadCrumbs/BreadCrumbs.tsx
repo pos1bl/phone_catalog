@@ -1,11 +1,9 @@
 import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 
-import './BreadCrumbs.scss';
 import home from '../../images/home.svg';
-import {
-  CurrentProductsContext,
-} from '../../helpers/context/CurrentProductsContext';
+import { CurrentProductsContext } from '../../context/CurrentProductsContext';
+import './BreadCrumbs.scss';
 
 export const BreadCrumbs = () => {
   const { location } = useContext(CurrentProductsContext);

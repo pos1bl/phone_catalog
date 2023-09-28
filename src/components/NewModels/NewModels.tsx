@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { PhoneCarousel } from '../PhoneCarousel/PhoneCarousel';
 import { getBrandNewProducts } from '../../helpers/api';
 import { Product } from '../../types/Product';
-import Products from '../../helpers/data/products';
+import Products from '../../data/products';
 
 export const NewModels = () => {
   const [phones, setPhones] = useState<Product[]>([]);

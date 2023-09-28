@@ -1,7 +1,7 @@
 import React, { useContext, useMemo, useState } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 
-import { Product } from '../../types/Product';
+import { Product } from '../types/Product';
 import SortOptions from '../data/sort-options';
 import Products from '../data/products';
 import { ProductsContext } from './ProductsContext';

@@ -1,7 +1,7 @@
 import { Product } from '../types/Product';
 import { ProductDetails } from '../types/ProductDetails';
-import { PRODUCTS_URL, PRODUCT_DETAILS_URL, JSON_URL } from './data/api-urls';
-import Products from './data/products';
+import { PRODUCTS_URL, PRODUCT_DETAILS_URL, JSON_URL } from '../data/api-urls';
+import Products from '../data/products';
 
 type FetchProducts = (
   category: Products,

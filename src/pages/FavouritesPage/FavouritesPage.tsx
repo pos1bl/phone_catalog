@@ -1,18 +1,18 @@
 import { useContext } from 'react';
 
-import { FavContext } from '../../helpers/context/FavContext';
-import { BackButton } from '../../components/BackButton/BackButton';
 import { EmptyContent } from '../../components/EmptyContent/EmptyContent';
 import { ProductsList } from '../../components/ProductsList/ProductsList';
+import { BreadCrumbs } from '../../components/BreadCrumbs/BreadCrumbs';
 import './FavouritesPage.scss';
+import { AddedContext } from '../../context/AddedContext';
 
 export const FavouritesPage = () => {
-  const { favProducts } = useContext(FavContext);
+  const { favProducts } = useContext(AddedContext);
 
   return (
     <div className="favourites-page">
-      <section className="favourites-page__back">
-        <BackButton />
+      <section className="favourites-page__bread-crumbs">
+        <BreadCrumbs />
       </section>
 
       <h1 className="favourites-page__title">Favourites</h1>

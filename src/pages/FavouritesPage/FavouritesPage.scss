@@ -4,7 +4,7 @@
 .favourites-page {
   @include product-page;
 
-  &__back {
+  &__bread-crumbs {
     margin-bottom: 40px;
   }
 

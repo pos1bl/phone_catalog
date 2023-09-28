@@ -6,9 +6,9 @@ type Props = {
   product: UniversalProduct;
 };
 
-type CartFunction = (props: Props) => void;
+type FavFunction = (props: Props) => void;
 
-export const handleAdd: CartFunction = ({
+export const handleAdd: FavFunction = ({
   setFavProducts,
   setIsAdded,
   product,
@@ -17,7 +17,7 @@ export const handleAdd: CartFunction = ({
   setIsAdded(true);
 };
 
-export const handleDelete: CartFunction = ({
+export const handleDelete: FavFunction = ({
   setFavProducts,
   setIsAdded,
   product,

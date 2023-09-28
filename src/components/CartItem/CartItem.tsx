@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 
 import { Cart } from '../../types/Cart';
+import { OperationOptions } from '../../data/operation-options';
 import './CartItem.scss';
-import { CartContext } from '../../helpers/context/CartContext';
-import { OperationOptions } from '../../helpers/data/operation-options';
+import { AddedContext } from '../../context/AddedContext';
 
 type Props = {
   cartItem: Cart;
 };
 
 export const CartItem: React.FC<Props> = ({ cartItem }) => {
-  const { setCartProducts } = useContext(CartContext);
+  const { setCartProducts } = useContext(AddedContext);
 
   const { id, quantity, product } = cartItem;
   const {
@@ -23,7 +23,7 @@ export const CartItem: React.FC<Props> = ({ cartItem }) => {
     itemId,
   } = product;
 
-  const handleDelete = () => setCartProducts(prevProducts => {
+  const handleDelete = () => setCartProducts((prevProducts: Cart[]) => {
     const index = prevProducts
       .findIndex(({ product: prevProduct }) => prevProduct.itemId === itemId);
 

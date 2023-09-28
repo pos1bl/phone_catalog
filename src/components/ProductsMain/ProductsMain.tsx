@@ -3,14 +3,12 @@ import { useContext } from 'react';
 import { Product } from '../../types/Product';
 import { BreadCrumbs } from '../BreadCrumbs/BreadCrumbs';
 import { ProductsContainer } from '../ProductsContainer/ProductsContainer';
-import { ProductsContext } from '../../helpers/context/ProductsContext';
+import { ProductsContext } from '../../context/ProductsContext';
 import { Loader } from '../Loader/Loader';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
-import './ProductsMain.scss';
 import { NoResult } from '../NoResult/NoResult';
-import {
-  CurrentProductsContext,
-} from '../../helpers/context/CurrentProductsContext';
+import { CurrentProductsContext } from '../../context/CurrentProductsContext';
+import './ProductsMain.scss';
 
 type Props = {
   title: string,

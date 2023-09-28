@@ -7,8 +7,8 @@ import arrowLeft from '../../images/arrows/arrow-left.svg';
 import arrowRight from '../../images/arrows/arrow-right.svg';
 import arrowLeftDisabled from '../../images/arrows/arrow-left--disabled.svg';
 import arrowRightDisabled from '../../images/arrows/arrow-right--disabled.svg';
-import './Pagination.scss';
 import { Product } from '../../types/Product';
+import './Pagination.scss';
 
 type Props = {
   amount: string;

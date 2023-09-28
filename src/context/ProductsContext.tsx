@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 
-import { Product } from '../../types/Product';
-import { getProducts } from '../api';
+import { Product } from '../types/Product';
+import { getProducts } from '../helpers/api';
 import Products from '../data/products';
 
 type ProductsContextType = {

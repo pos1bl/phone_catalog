@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import classNames from 'classnames';
 
-import { imageAdditional } from '../../helpers/data/image-additional';
+import { imageAdditional } from '../../data/image-additional';
 import './PhotoCard.scss';
 
 type Props = {

@@ -8,7 +8,7 @@ type Props = {
 export const MainProperties: React.FC<Props> = ({ properties }) => (
   <ul className="main-properties">
     {Object.entries(properties).map(([property, value]) => (
-      <li className="main-properties__item">
+      <li className="main-properties__item" key={value}>
         <span className="main-properties__property">{property}</span>
         <span className="main-properties__value">{value}</span>
       </li>

@@ -43,3 +43,12 @@ p {
 a {
   text-decoration: none;
 }
+
+input {
+  border: none;
+  padding: 0;
+
+  &:focus {
+    border: none;
+  }
+}

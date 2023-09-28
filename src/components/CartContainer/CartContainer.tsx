@@ -1,11 +1,12 @@
 import { useContext } from 'react';
 
-import { CartContext } from '../../helpers/context/CartContext';
 import { CartItem } from '../CartItem/CartItem';
+// import { AddedContext } from '../../context/CartContext';
 import './CartContainer.scss';
+import { AddedContext } from '../../context/AddedContext';
 
 export const CartContainer = () => {
-  const { cartProducts } = useContext(CartContext);
+  const { cartProducts } = useContext(AddedContext);
 
   return (
     <ul className="cart-container">

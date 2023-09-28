@@ -1,0 +1,10 @@
+@import "../../style/vars";
+@import "../../style/mixins";
+
+.invalid-page {
+  @include product-page;
+
+  &__title {
+    @include title;
+  }
+}

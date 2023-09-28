@@ -3,8 +3,10 @@ import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 
 import logo from '../../images/logo.svg';
-import { CartContext } from '../../helpers/context/CartContext';
-import { FavContext } from '../../helpers/context/FavContext';
+import { CurrentProductsContext } from '../../context/CurrentProductsContext';
+import { SearchOptions } from '../../data/search-options';
+import { Search } from '../Search/Search';
+import { AddedContext } from '../../context/AddedContext';
 import './Header.scss';
 
 type IsActive = {
@@ -28,8 +30,11 @@ const getClassnamesCart = ({ isActive }: IsActive) => classNames(
 );
 
 export const Header = () => {
-  const { cartProducts } = useContext(CartContext);
-  const { favProducts } = useContext(FavContext);
+  const { location } = useContext(CurrentProductsContext);
+  const { cartProducts, favProducts } = useContext(AddedContext);
+
+  const isSearch = Object.values(SearchOptions)
+    .includes(location as SearchOptions);
 
   return (
     <div className="header">
@@ -63,7 +68,7 @@ export const Header = () => {
         </div>
 
         <div className="header__right">
-          {/* <Search /> */}
+          {isSearch && <Search />}
           <div className="header__icon">
             <NavLink className={getClassnamesFavourites} to="/favourites" />
 
