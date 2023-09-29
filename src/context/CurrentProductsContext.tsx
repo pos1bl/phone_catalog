@@ -30,6 +30,7 @@ export const CurrentProductsProvider: React.FC<Props> = ({ children }) => {
   const [searchParams] = useSearchParams();
   const { phones, tablets, accessories } = useContext(ProductsContext);
 
+  const query = searchParams.get('query') || '';
   const sort = searchParams.get('sort') || '';
   const location = useLocation().pathname.slice(1);
 
@@ -48,6 +49,12 @@ export const CurrentProductsProvider: React.FC<Props> = ({ children }) => {
         break;
       default:
         return;
+    }
+
+    if (query) {
+      newList = newList
+        .filter(product => product.name.toLowerCase()
+          .includes(query.toLowerCase()));
     }
 
     if (sort) {
@@ -69,7 +76,7 @@ export const CurrentProductsProvider: React.FC<Props> = ({ children }) => {
     }
 
     setCurrentProducts(newList);
-  }, [location, sort, phones, tablets, accessories]);
+  }, [location, sort, phones, tablets, accessories, query]);
 
   const value = useMemo(() => ({
     location,

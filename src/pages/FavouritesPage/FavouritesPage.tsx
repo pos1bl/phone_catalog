@@ -5,9 +5,18 @@ import { ProductsList } from '../../components/ProductsList/ProductsList';
 import { BreadCrumbs } from '../../components/BreadCrumbs/BreadCrumbs';
 import './FavouritesPage.scss';
 import { AddedContext } from '../../context/AddedContext';
+import { CurrentProductsContext } from '../../context/CurrentProductsContext';
+import { NoResult } from '../../components/NoResult/NoResult';
 
 export const FavouritesPage = () => {
   const { favProducts } = useContext(AddedContext);
+  const { searchParams } = useContext(CurrentProductsContext);
+  const query = searchParams.get('query' || '');
+  const currentFavProudcts = query
+    ? favProducts
+      .filter(product => product.name.toLowerCase()
+        .includes(query.toLowerCase()))
+    : favProducts;
 
   return (
     <div className="favourites-page">
@@ -17,13 +26,17 @@ export const FavouritesPage = () => {
 
       <h1 className="favourites-page__title">Favourites</h1>
 
-      <p className="favourites-page__caption">{`${favProducts.length} models`}</p>
+      <p className="favourites-page__caption">{`${currentFavProudcts.length} models`}</p>
 
-      {favProducts.length ? (
+      {!!currentFavProudcts.length && (
         <div className="favorites-page__content">
-          <ProductsList productsPerPage={favProducts} />
+          <ProductsList productsPerPage={currentFavProudcts} />
         </div>
-      ) : <EmptyContent title="favourites" />}
+      )}
+
+      {!currentFavProudcts.length && <NoResult />}
+
+      {!favProducts.length && <EmptyContent title="favourites" />}
     </div>
   );
 };

@@ -48,7 +48,11 @@ input {
   border: none;
   padding: 0;
 
+  &::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+  }
+
   &:focus {
-    border: none;
+    outline: none;
   }
 }

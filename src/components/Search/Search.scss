@@ -9,4 +9,15 @@
 
   width: 327px;
   box-shadow: -1px 0 $color-elements;
+
+  &__input {
+    @include buttons;
+    color: $color-primary;
+  }
+
+  &__close {
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
