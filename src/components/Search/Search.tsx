@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+/* eslint-disable-next-line import/no-extraneous-dependencies */
 import { debounce } from 'lodash';
 
 import { getSearchWith } from '../../helpers/searchHepler';
