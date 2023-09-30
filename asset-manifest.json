@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "./static/css/main.50e91216.chunk.css",
+    "main.js": "./static/js/main.ec9700e9.chunk.js",
+    "main.js.map": "./static/js/main.ec9700e9.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.330dba63.js",
+    "runtime-main.js.map": "./static/js/runtime-main.330dba63.js.map",
+    "static/js/2.4d29074e.chunk.js": "./static/js/2.4d29074e.chunk.js",
+    "static/js/2.4d29074e.chunk.js.map": "./static/js/2.4d29074e.chunk.js.map",
+    "index.html": "./index.html",
+    "static/css/main.50e91216.chunk.css.map": "./static/css/main.50e91216.chunk.css.map",
+    "static/js/2.4d29074e.chunk.js.LICENSE.txt": "./static/js/2.4d29074e.chunk.js.LICENSE.txt",
+    "static/media/App.scss": "./static/media/Mont-SemiBold.8979d71a.otf",
+    "static/media/Carousel.scss": "./static/media/dot.5573428e.svg",
+    "static/media/arrow-bottom.98c9dd6d.svg": "./static/media/arrow-bottom.98c9dd6d.svg",
+    "static/media/arrow-left--disabled.72a406c5.svg": "./static/media/arrow-left--disabled.72a406c5.svg",
+    "static/media/arrow-left.c0d01b22.svg": "./static/media/arrow-left.c0d01b22.svg",
+    "static/media/BreadCrumbs.scss": "./static/media/arrow-right--disabled.43631d1a.svg",
+    "static/media/arrow-right.4756c064.svg": "./static/media/arrow-right.4756c064.svg",
+    "static/media/arrow-top--dropdown.c5f6fdb2.svg": "./static/media/arrow-top--dropdown.c5f6fdb2.svg",
+    "static/media/arrow-top.a61ad2d0.svg": "./static/media/arrow-top.a61ad2d0.svg",
+    "static/media/Header.scss": "./static/media/favourites.dbd19c03.svg",
+    "static/media/CartItem.scss": "./static/media/plus.dea15724.svg",
+    "static/media/favourites-selected.d554a185.svg": "./static/media/favourites-selected.d554a185.svg",
+    "static/media/home.d4c29e4f.svg": "./static/media/home.d4c29e4f.svg",
+    "static/media/logo.13ce922e.svg": "./static/media/logo.13ce922e.svg",
+    "static/media/search.eb670dd9.svg": "./static/media/search.eb670dd9.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.330dba63.js",
+    "static/js/2.4d29074e.chunk.js",
+    "static/css/main.50e91216.chunk.css",
+    "static/js/main.ec9700e9.chunk.js"
+  ]
+}
