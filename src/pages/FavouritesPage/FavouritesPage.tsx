@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 
-import { EmptyContent } from '../../components/EmptyContent/EmptyContent';
 import { ProductsList } from '../../components/ProductsList/ProductsList';
+import { EmptyContent } from '../../components/EmptyContent/EmptyContent';
 import { BreadCrumbs } from '../../components/BreadCrumbs/BreadCrumbs';
 import './FavouritesPage.scss';
 import { AddedContext } from '../../context/AddedContext';
