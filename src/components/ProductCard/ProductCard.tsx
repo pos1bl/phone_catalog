@@ -78,7 +78,7 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
         state={{ search: searchParams.toString() }}
       >
         <img
-          src={`_new/${image}`}
+          src={`https://mate-academy.github.io/react_phone-catalog/_new/${image}`}
           alt={itemId}
           className="phone-card__image"
         />
